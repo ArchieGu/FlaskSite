@@ -1,0 +1,21 @@
+aws elbv2 create-target-group --name elb-hire2020-archiegu-04010401 --protocol HTTP --port 8888 --vpc-id vpc-0e1d08df60dcae198
+
+
+vpc-0e1d08df60dcae198
+
+aws elbv2 create-target-group --name elb-hire-2020-archiegu --protocol HTTP --port 8888 --vpc-id vpc-0e1d08df60dcae198
+
+aws elbv2 register-targets --target-group-arn "arn:aws-cn:elasticloadbalancing:cn-north-1:368436158483:targetgroup/elb-hire-2020-archiegu/66527c638b4754b7" --targets Id=i-0594f36167a0dc507
+
+
+"TargetGroupArn": "arn:aws-cn:elasticloadbalancing:cn-north-1:368436158483:targetgroup/elb-hire-2020-archiegu/66527c638b4754b7"
+
+aws elbv2 create-listener --load-balancer-arn "arn:aws-cn:elasticloadbalancing:cn-north-1:368436158483:loadbalancer/app/elb-hire2020-archiegu/afe8d01ec28ee73b" --protocol HTTP --port 8888 --default-actions Type=forward,TargetGroupArn="arn:aws-cn:elasticloadbalancing:cn-north-1:368436158483:targetgroup/elb-hire-2020-archiegu/66527c638b4754b7"
+
+
+
+aws elbv2 create-load-balancer --name elb-hire2020-archiegu --subnets subnet-01fb2a35ea0eb3b37 subnet-01b104c5dfeef6d6a --security-groups sg-0b5c42f314f01b227
+
+"LoadBalancerArn": "arn:aws-cn:elasticloadbalancing:cn-north-1:368436158483:loadbalancer/app/elb-hire2020-archiegu/afe8d01ec28ee73b"
+
+"ListenerArn": "arn:aws-cn:elasticloadbalancing:cn-north-1:368436158483:listener/app/elb-hire2020-archiegu/afe8d01ec28ee73b/37cbc88724de79ec",
